@@ -2,238 +2,136 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <meta name="theme-color" content="#8B5CF6">
-  <title>Wedding Invitation — [Bride & Groom]</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-  <meta name="description" content="You're invited! Wedding invitation." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wedding Invitation — Shaik Layaq</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --accent:#8B5CF6; /* purple */
-      --muted:#6b7280;
-      --bg:#fffaf6;
-      --card:#ffffffcc;
-      --glass: rgba(255,255,255,0.65);
-      --max-width:980px;
-      --radius:14px;
-      --tap-size:48px; /* base tappable size */
-    }
+    :root{ --ivory:#fbf7f0; --gold:#b38b3b; --muted:#565252 }
     *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-      background: linear-gradient(180deg,#fffaf6 0%, #fff 60%);
-      color:#111827;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      padding:20px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      min-height:100vh;
-    }
+    body{margin:0;background:linear-gradient(180deg,#fbfbfa,#fff);font-family:Montserrat,system-ui,Arial;padding:28px;display:flex;align-items:center;justify-content:center}
+    .invite{width:100%;max-width:980px;background:linear-gradient(180deg,#fffdf9,#fffaf6);border-radius:14px;box-shadow:0 18px 50px rgba(10,12,15,0.08);overflow:hidden;position:relative;display:grid;grid-template-columns:1fr 380px}
 
-    /* container */
-    .invite-wrap{
-      width:100%;
-      max-width:var(--max-width);
-      background: url('') center/cover no-repeat; /* add a background image URL here */
-      border-radius:var(--radius);
-      box-shadow: 0 10px 30px rgba(15,23,42,0.12);
-      overflow:hidden;
-      display:grid;
-      grid-template-columns: 1fr 380px;
-      gap:0;
-      margin:12px;
-    }
+    /* decorative images */
+    .front-img{position:absolute;left:45%;top:12px;transform:translateX(-50%);width:285px;max-width:86%;pointer-events:none}
+    .bismillah{display:block;margin:86px auto 6px; width:520px; max-width:86%;}
 
-    /* left - main content */
-    .invite-main{
-      padding:36px 40px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.94), rgba(255,255,255,0.82));
-      backdrop-filter: blur(6px);
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      gap:16px;
-    }
+    .main{padding:42px 48px}
+    .families{font-family:'Playfair Display',serif;color:var(--muted);font-size:14px;letter-spacing:0.6px}
+    h1{font-family:'Playfair Display',serif;font-size:36px;margin:6px 0 6px;color:#1b1b1b}
+    .lead{color:var(--muted);margin:6px 0 18px}
 
-    .logo{font-family:'Playfair Display', serif; font-size:18px; letter-spacing:1px; color:var(--accent)}
-    h1{font-family:'Playfair Display', serif; font-size:36px; margin:4px 0}
-    p.lead{font-size:15px; color:var(--muted); margin:0}
-
-    .details{
-      margin-top:6px;
-      padding:14px;
-      border-radius:12px;
-      background:var(--card);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
-    }
-    .row{display:flex; gap:12px; align-items:center}
+    .details{background:rgba(255,255,255,0.85);padding:16px;border-radius:10px;border:1px solid rgba(179,139,59,0.06);box-shadow:inset 0 1px 0 rgba(255,255,255,0.6)}
+    .row{display:flex;gap:12px;align-items:center}
     .col{flex:1}
-    .muted{color:var(--muted); font-size:14px}
+    .muted{color:var(--muted);font-size:14px}
 
-    .names{display:flex; gap:12px; align-items:center; margin-top:10px; flex-wrap:wrap}
-    .name-card{padding:12px 14px; border-radius:10px; background:linear-gradient(180deg,#fff,#fff0); box-shadow:0 6px 18px rgba(2,6,23,0.06); min-width:140px}
-    .name{font-family:'Playfair Display', serif; font-size:20px}
-    .amp{font-size:18px; color:var(--muted)}
+    .names{display:flex;gap:12px;align-items:center;margin-top:12px;flex-wrap:wrap}
+    .name-card{padding:12px 14px;border-radius:10px;min-width:140px}
+    .role{font-size:13px;color:var(--muted)}
+    .name{font-family:'Playfair Display',serif;font-size:20px;margin-top:6px}
 
-    .meta{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px}
-    .chip{padding:8px 10px; border-radius:999px; background:rgba(139,92,246,0.08); color:var(--accent); font-weight:600; font-size:13px}
+    .meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .chip{padding:8px 10px;border-radius:999px;background:rgba(179,139,59,0.08);color:var(--gold);font-weight:600;font-size:13px;border:1px solid rgba(179,139,59,0.06)}
 
-    /* right - photo / RSVP */
-    .invite-side{
-      padding:20px;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:flex-start;
-      gap:14px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.4), rgba(255,255,255,0.2));
-      border-left: 1px solid rgba(0,0,0,0.04);
-    }
-    .photo{
-      width:100%; max-width:260px; height:auto; aspect-ratio:1/1; border-radius:12px; overflow:hidden; box-shadow:0 12px 32px rgba(2,6,23,0.12);
-      background:linear-gradient(135deg, #f3e8ff, #fff1f2);
-      display:flex; align-items:center; justify-content:center; font-family:'Playfair Display', serif; color:var(--muted)
-    }
+    .side{padding:26px;display:flex;flex-direction:column;align-items:center;gap:14px;border-left:1px solid rgba(0,0,0,0.04);background:linear-gradient(180deg,rgba(255,255,255,0.6),rgba(255,250,240,0.6))}
+    .card-photo{width:320px;height:320px;border-radius:12px;overflow:hidden;background:linear-gradient(135deg,#fffefc,#fff8f2);box-shadow:0 12px 26px rgba(15,15,20,0.06);display:flex;align-items:center;justify-content:center}
+    .card-photo img{width:100%;height:100%;object-fit:cover}
 
-    .rsvp{display:flex; flex-direction:column; gap:10px; align-items:center; width:100%}
-    .btn{display:inline-flex; align-items:center; justify-content:center; padding:12px 16px; min-height:var(--tap-size); border-radius:10px; text-decoration:none; font-weight:600; width:100%}
-    .btn-primary{background:linear-gradient(90deg,var(--accent), #6D28D9); color:white}
-    .btn-ghost{background:transparent; border:1px solid rgba(0,0,0,0.06); color:var(--muted)}
+    .btn{display:inline-flex;padding:12px 14px;border-radius:10px;text-decoration:none;font-weight:600;border:0}
+    .btn-primary{background:linear-gradient(90deg,var(--gold),#a9773a);color:#fff}
+    .btn-ghost{background:transparent;border:1px solid rgba(0,0,0,0.06);color:#222}
 
-    footer{font-size:13px; color:var(--muted); margin-top:12px}
+    .map-wrap{width:100%;height:0;padding-bottom:56%;position:relative;border-radius:10px;overflow:hidden}
+    .map-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 
-    /* small screen adjustments (mobile & Android) */
-    @media (max-width:900px){
-      .invite-wrap{grid-template-columns:1fr; border-radius:12px}
-      .invite-main{padding:20px}
-      .invite-side{padding:16px; border-left:0; border-top:1px solid rgba(0,0,0,0.04)}
-      h1{font-size:28px}
-      .photo{max-width:220px}
-      .btn{min-height:48px}
-    }
+    .qr{width:100%;text-align:center}
+    .qr img{width:140px;height:140px;object-fit:cover;border-radius:8px}
 
-    /* very small devices */
-    @media (max-width:420px){
-      body{padding:12px}
-      .invite-main{padding:16px}
-      .names{gap:8px}
-      .name{font-size:18px}
-      .logo{font-size:16px}
-    }
+    footer{font-size:13px;color:var(--muted);margin-top:10px}
 
-    /* make iframe/map responsive */
-    .map-wrap{width:100%; height:0; padding-bottom:56%; position:relative}
-    .map-wrap iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
-
-    /* accessible focus states */
-    .btn:focus{outline:3px solid rgba(139,92,246,0.18); outline-offset:2px}
+    @media(max-width:920px){.invite{grid-template-columns:1fr;padding:8px}.side{border-left:0;border-top:1px solid rgba(0,0,0,0.04)}.main{padding:28px}.bismillah{width:360px}}
+    @media(max-width:420px){.bismillah{width:280px}.card-photo{width:180px;height:180px}}
   </style>
 </head>
 <body>
-  <!--
-    Wedding invitation single-file site (responsive for desktop + Android).
 
-    HOW TO USE:
-    1) Replace placeholder text (BRIDE_NAME, GROOM_NAME, DATE, VENUE) below with your details.
-    2) Add a background image: set URL in .invite-wrap background in <style> (replace the empty url('')).
-    3) Replace the placeholder image in the .photo div with an <img src="..." alt=""> or add a background image.
-    4) To deploy to GitHub Pages: create a new repository, add this file as index.html to the root, push to main branch, enable GitHub Pages from repository settings (select main branch / root). The site will be available at https://<your-username>.github.io/<repo-name>/
-  -->
+  <div class="invite" role="main" aria-label="Wedding invitation">
 
-  <main class="invite-wrap" role="main">
-    <section class="invite-main">
-      <div class="logo">The families of</div>
-      <h1>Wedding of<br><span style="font-weight:700">BRIDE_NAME</span> & <span style="font-weight:700">GROOM_NAME</span></h1>
-      <p class="lead">With the blessing of Allah and our families, we request the honour of your presence to celebrate our marriage.</p>
+    <!-- front decorative PNG at the very top/center -->
+    <img class="front-img" src="front-min.png" alt="front decoration">
+    <div style="text-align:center;font-family:'Playfair Display',serif;font-size:14px;color:var(--muted);margin-top:130px">In the name of Allah, the Most Gracious, the Most Merciful</div>
+
+    
+    
+    <!-- bismillah graphic (uploaded earlier) + English phrasing -->
+    <img class="bismillah" src="" >
+    
+    <div class="main">
+      <div class="families">With the blessings of Late Mrs.  &amp; Mr. Mohammed Moinuddin Sahab </div>
+      <h1>Mrs. &amp; Mr. Mohammed Mohinuddin </h1> 
+      <div class="lead">We solicit your gracious presence on the auspicious occasion of the marriage ceremony of our beloved </div>
+
+      <div class="names">
+        <div class="name-card">
+           
+          <div class="name">Daughter</div>
+          <!-- <div class="role">D/O:  Mrs. &amp; Mr. Mohammed Mohinuddin Sahab</div> -->
+        </div>
+
+        <div class="name-card" style="text-align:center;flex:0 0 60px">
+          <div style="font-family:'Playfair Display',serif;font-size:28px;color:var(--muted);margin-top:10px">&amp;</div>
+        </div>
+
+        <div class="name-card">
+          
+          <div class="name">Shaik Layaq</div>
+          <div class="role">S/O: Shaik Khaja Miyan Sahab</div>
+        </div>
+      </div>
 
       <div class="details" aria-labelledby="when-where">
         <div class="row">
           <div class="col">
             <div class="muted">When</div>
-            <div id="when-where" style="font-weight:700">DATE — 11:00 AM</div>
+            <div id="when-where" style="font-weight:700">On Monday, 22nd December 2025 — Nikah: 10:00 AM</div>
           </div>
           <div class="col">
             <div class="muted">Where</div>
-            <div style="font-weight:700">VENUE NAME, CITY</div>
-          </div>
-        </div>
-
-        <div class="names">
-          <div class="name-card">
-            <div class="muted">Bride</div>
-            <div class="name">BRIDE_NAME</div>
-            <div class="muted">D/O: FATHER_NAME</div>
-          </div>
-          <div class="amp" aria-hidden="true">&amp;</div>
-          <div class="name-card">
-            <div class="muted">Groom</div>
-            <div class="name">GROOM_NAME</div>
-            <div class="muted">S/O: FATHER_NAME</div>
+            <div style="font-weight:700">H.R. Palace Function Hall, Jujalpur, Karasgutti Road, Narayankhed, Sangareddy</div>
           </div>
         </div>
 
         <div class="meta" role="list">
-          <div class="chip" role="listitem">Nikah Ceremony</div>
-          <div class="chip" role="listitem">Mehndi & Sangeet</div>
-          <div class="chip" role="listitem">Reception</div>
+          <div class="chip" role="listitem">INSHA ALLAH NIKAH</div>
+          <div class="chip" role="listitem">Lunch to Follow</div>
+          <div class="chip" role="listitem">Valima: 23rd Dec 2025 (Evening)</div>
         </div>
 
-        <p style="margin-top:12px; color:var(--muted);">Dress code: Traditional / Formal. Kindly be seated 20 minutes before the ceremony. For any assistance, contact: +91-XXXXXXXXXX</p>
+        <p style="margin-top:12px;color:var(--muted)">With best compliments from: Md. Vazeer Pasha, Md. Khaleel, Md. Imran, Md. Yousuf, Md. Sailani and near &amp; dear.</p>
       </div>
 
-      <div style="display:flex; gap:12px; align-items:center; margin-top:14px;">
-        <a class="btn btn-primary" href="#rsvp">RSVP</a>
-        <a class="btn btn-ghost" href="#map">View Map</a>
+      <footer> We look forward to celebrating with you.</footer>
+    </div>
+
+    <aside class="side">
+      <div class="card-photo" aria-hidden="true">
+        <!-- use the scanned card image as a decorative photo -->
+        <img src="newD.png" alt="H.R. Palace invite scan">
       </div>
 
-      <footer>We look forward to celebrating with you — [Family Names]</footer>
-    </section>
-
-    <aside class="invite-side">
-      <div class="photo" aria-hidden="true">
-        <!-- Replace with an actual img tag for better performance on mobile -->
-        <img src="" alt="Bride & Groom" style="width:100%; height:100%; object-fit:cover; display:block" />
+      <div style="width:100%">
+        <div style="text-align:center;margin-bottom:8px;font-size:14px;color:var(--muted)">Venue (tap to open map)</div>
+        <a class="btn btn-primary" href="https://maps.app.goo.gl/1NjgWvddGmDEDCND7" target="_blank" rel="noopener">Open location in Google Maps</a>
       </div>
 
-      <div class="rsvp" id="rsvp">
-        <div style="text-align:center">
-          <div class="muted">Please confirm your presence</div>
-          <div style="font-weight:700; font-size:18px">RSVP before DATE</div>
-        </div>
-        <a class="btn btn-primary" href="mailto:youremail@example.com?subject=Wedding%20RSVP">Email RSVP</a>
-        <a class="btn btn-ghost" href="tel:+91XXXXXXXXXX">Call/WhatsApp</a>
-      </div>
+      <div class="map-wrap" style="width:100%;margin-top:12px">
+        <!-- embedded map can be added here by pasting Google maps embed iframe src -->
+        <iframe title="venue-map" src="" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-      <div id="map" style="width:100%">
-        <div class="muted">Venue Map</div>
-        <div class="map-wrap" style="margin-top:8px; width:100%; max-width:320px; border-radius:10px; overflow:hidden; box-shadow:0 6px 18px rgba(2,6,23,0.06)">
-          <!-- Replace the src below with your Google Maps embed URL -->
-          <iframe title="venue-map" src="" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-      </div>
-    </aside>
-  </main>
+<div style="font-size:13px;color:var(--muted);margin-top:10px;text-align:center;">
+  Contact: <a href="tel:+919573477045">9573477045</a>, <a href="tel:+918790562011">8790562011</a> (for assistance)
+  </aside>
+</div>
 
-  <script>
-    // Auto-scroll to hash (works on mobile) and ensure focus for accessibility
-    (function(){
-      if(location.hash){
-        const el = document.querySelector(location.hash);
-        if(el){ el.scrollIntoView({behavior:'smooth'}); el.tabIndex = -1; el.focus(); }
-      }
-
-      // Improve touch target feedback
-      document.querySelectorAll('.btn').forEach(b => {
-        b.addEventListener('touchstart', () => b.classList.add('pressed'));
-        b.addEventListener('touchend', () => b.classList.remove('pressed'));
-      });
-    })();
-  </script>
 </body>
 </html>

@@ -1,12 +1,205 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document Title</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wedding Invitation — [Bride & Groom]</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta name="description" content="You're invited! Wedding invitation." />
+  <style>
+    :root{
+      --accent:#8B5CF6; /* purple */
+      --muted:#6b7280;
+      --bg:#fffaf6;
+      --card:#ffffffcc;
+      --glass: rgba(255,255,255,0.65);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: linear-gradient(180deg,#fffaf6 0%, #fff 60%);
+      color:#111827;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:32px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    /* container */
+    .invite-wrap{
+      max-width:980px;
+      width:100%;
+      background: url('') center/cover no-repeat; /* add a background image URL here */
+      border-radius:18px;
+      box-shadow: 0 10px 30px rgba(15,23,42,0.12);
+      overflow:hidden;
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:0;
+    }
+
+    /* left - main content */
+    .invite-main{
+      padding:48px 56px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.86), rgba(255,255,255,0.6));
+      backdrop-filter: blur(6px);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      gap:18px;
+    }
+
+    .logo{font-family:'Playfair Display', serif; font-size:20px; letter-spacing:1px; color:var(--accent)}
+    h1{font-family:'Playfair Display', serif; font-size:40px; margin:6px 0}
+    p.lead{font-size:16px; color:var(--muted); margin:0}
+
+    .details{
+      margin-top:8px;
+      padding:18px;
+      border-radius:12px;
+      background:var(--card);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+    }
+    .row{display:flex; gap:16px; align-items:center}
+    .col{flex:1}
+    .muted{color:var(--muted); font-size:14px}
+
+    .names{display:flex; gap:12px; align-items:center; margin-top:12px}
+    .name-card{padding:14px 18px; border-radius:12px; background:linear-gradient(180deg,#fff,#fff0); box-shadow:0 6px 18px rgba(2,6,23,0.06)}
+    .name{font-family:'Playfair Display', serif; font-size:22px}
+    .amp{font-size:20px; color:var(--muted)}
+
+    .meta{display:flex; gap:12px; flex-wrap:wrap; margin-top:12px}
+    .chip{padding:10px 12px; border-radius:999px; background:rgba(139,92,246,0.08); color:var(--accent); font-weight:600; font-size:13px}
+
+    /* right - photo / RSVP */
+    .invite-side{
+      padding:32px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.4), rgba(255,255,255,0.2));
+      border-left: 1px solid rgba(0,0,0,0.04);
+    }
+    .photo{
+      width:220px; height:220px; border-radius:12px; overflow:hidden; box-shadow:0 12px 32px rgba(2,6,23,0.12);
+      background:linear-gradient(135deg, #f3e8ff, #fff1f2);
+      display:flex; align-items:center; justify-content:center; font-family:'Playfair Display', serif; color:var(--muted)
+    }
+
+    .rsvp{display:flex; flex-direction:column; gap:8px; align-items:center}
+    .btn{display:inline-block; padding:10px 16px; border-radius:10px; text-decoration:none; font-weight:600}
+    .btn-primary{background:linear-gradient(90deg,var(--accent), #6D28D9); color:white}
+    .btn-ghost{background:transparent; border:1px solid rgba(0,0,0,0.06); color:var(--muted)}
+
+    footer{font-size:13px; color:var(--muted); margin-top:18px}
+
+    /* responsiveness */
+    @media (max-width:900px){
+      .invite-wrap{grid-template-columns:1fr; padding:0}
+      .invite-main{padding:28px}
+      .invite-side{padding:22px}
+    }
+  </style>
 </head>
 <body>
-    <!-- Content of your webpage goes here -->
-    <h1>imran</h1>
+  <!--
+    Wedding invitation single-file site.
+    HOW TO USE:
+    1) Replace placeholder text (BRIDE_NAME, GROOM_NAME, DATE, VENUE) below with your details.
+    2) Add a background image: set URL in .invite-wrap background in <style> (replace the empty url('')).
+    3) To deploy to GitHub Pages: create a new repository, add this file as index.html to the root, push to main branch, enable GitHub Pages from repository settings (select main branch / root). The site will be available at https://<your-username>.github.io/<repo-name>/
+  -->
+
+  <main class="invite-wrap" role="main">
+    <section class="invite-main">
+      <div class="logo">The families of</div>
+      <h1>Wedding of<br><span style="font-weight:700">BRIDE_NAME</span> & <span style="font-weight:700">GROOM_NAME</span></h1>
+      <p class="lead">With the blessing of Allah and our families, we request the honour of your presence to celebrate our marriage.</p>
+
+      <div class="details">
+        <div class="row">
+          <div class="col">
+            <div class="muted">When</div>
+            <div style="font-weight:700">DATE — 11:00 AM</div>
+          </div>
+          <div class="col">
+            <div class="muted">Where</div>
+            <div style="font-weight:700">VENUE NAME, CITY</div>
+          </div>
+        </div>
+
+        <div class="names">
+          <div class="name-card">
+            <div class="muted">Bride</div>
+            <div class="name">BRIDE_NAME</div>
+            <div class="muted">D/O: FATHER_NAME</div>
+          </div>
+          <div class="amp">&amp;</div>
+          <div class="name-card">
+            <div class="muted">Groom</div>
+            <div class="name">GROOM_NAME</div>
+            <div class="muted">S/O: FATHER_NAME</div>
+          </div>
+        </div>
+
+        <div class="meta">
+          <div class="chip">Nikah Ceremony</div>
+          <div class="chip">Mehndi & Sangeet</div>
+          <div class="chip">Reception</div>
+        </div>
+
+        <p style="margin-top:12px; color:var(--muted);">Dress code: Traditional / Formal. Kindly be seated 20 minutes before the ceremony. For any assistance, contact: +91-XXXXXXXXXX</p>
+      </div>
+
+      <div style="display:flex; gap:12px; align-items:center; margin-top:14px;">
+        <a class="btn btn-primary" href="#rsvp">RSVP</a>
+        <a class="btn btn-ghost" href="#map">View Map</a>
+      </div>
+
+      <footer>We look forward to celebrating with you — [Family Names]</footer>
+    </section>
+
+    <aside class="invite-side">
+      <div class="photo" aria-hidden="true">
+        Photo
+      </div>
+
+      <div class="rsvp" id="rsvp">
+        <div style="text-align:center">
+          <div class="muted">Please confirm your presence</div>
+          <div style="font-weight:700; font-size:18px">RSVP before DATE</div>
+        </div>
+        <a class="btn btn-primary" href="mailto:youremail@example.com?subject=Wedding%20RSVP">Email RSVP</a>
+        <a class="btn btn-ghost" href="tel:+91XXXXXXXXXX">Call/WhatsApp</a>
+      </div>
+
+      <div id="map">
+        <div class="muted">Venue Map</div>
+        <div style="margin-top:8px; width:220px; height:120px; border-radius:10px; overflow:hidden; box-shadow:0 6px 18px rgba(2,6,23,0.06)">
+          <!-- Replace with embedded Google Maps iframe if you want: paste iframe here -->
+          <iframe title="venue-map" frameborder="0" style="width:100%; height:100%; border:0;" src="" aria-hidden="true"></iframe>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <script>
+    // Small script to auto-scroll to sections if hash present
+    (function(){
+      if(location.hash){
+        const el = document.querySelector(location.hash);
+        if(el) el.scrollIntoView({behavior:'smooth'});
+      }
+    })();
+  </script>
 </body>
 </html>
